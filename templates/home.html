@@ -1,21 +1,132 @@
 <html>
-    <body bgcolor=blue>
+  <head>
+    <title>Imagine Cup | Size Recommender</title>
+    <script>
+      function unhide() {
+        var hid = document.getElementsByClassName("exp");
+        // Emulates jQuery $(element).is(':hidden');
+        if (hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+          hid[0].style.visibility = "visible";
+        }
+      }
+    </script>
+    <style>
+      .exp {
+        visibility: hidden;
+      }
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
 
-        <center>
+      input[type="submit"] {
+        width: 100%;
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
 
-        <h1> Size Recommender </h1><br>
-        
-        <form method="POST", action="{{url_for('home')}}">
-           <b> Age :  <input type="number", name='a', placeholder="enter 1"> <br><br>
-            Weight in pounds :  <input type="number", name='b', placeholder="enter 2"> <br><br>
-            Height in inches :  <input type="number", name='c', placeholder="enter 3"> <br><br>
-            gender(0=male,1=female): : <input type="number", name='d', placeholder="enter 4"> <br><br><br></b>
-            <input type="submit" , value='predict!' >
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body bgcolor="blue">
+    <center>
+      <h1
+        style="
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+            Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          margin-top: 5px;
+        "
+      >
+        Size Recommender
+      </h1>
+      <br />
+      <div
+        style="
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+            Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        "
+      >
+        <form method="POST" , action="{{url_for('home')}}">
+          <b>
+            Age :
+            <input type="number" , name="a" , placeholder="Enter Age Here" />
+            <br /><br />
+            Weight in pounds :
+            <input
+              type="number"
+              ,
+              name="b"
+              ,
+              placeholder="Enter Weight in Pounds Here" />
+            <br /><br />
+            Height in inches :
+            <input
+              type="number"
+              ,
+              name="c"
+              ,
+              placeholder="Enter Height in inches Here" />
+            <br /><br />
+            Gender(0=male,1=female): :
+            <input type="number" , name="d" , placeholder="Enter Gender Here" />
+            <br /><br /><br
+          /></b>
+          <input
+            onclick="unhide()"
+            style="
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+                sans-serif;
+              font-size: xx-large;
+            "
+            type="submit"
+            ,
+            value="Predict!"
+          />
         </form>
-        
+      </div>
     </center>
-    <p>Your predicted Tshirt Size</p>
-    {{tsize}}
+    <!-- <h2 style="text-align: center; color: blue">Your Predicted T-Shirt Size</h2> -->
+    <div
+      style="
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin-top: 5px;
+      "
+    >
 
-    </body>
+      <h1 style="text-align: center; color: black; font-size: xxx-large">
+        {{tsize}}
+      </h1>
+    </div>
+  </body>
 </html>
