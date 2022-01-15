@@ -47,7 +47,6 @@ tornado==6.1
 tqdm==4.59.0
 traitlets==5.0.5
 urllib3==1.26.8
-vboxapi==1.0
 wcwidth==0.2.5
 Werkzeug==2.0.2
 xlrd==2.0.1
