@@ -50,6 +50,7 @@ def man():
             Size= "2-Extra Large"
     elif (chestsize>48):
         Size= "2-Extra Large"
+    Size="Your Predicted T shirt Size: \n"+Size
 
     return render_template('home.html', tsize=Size)
 
