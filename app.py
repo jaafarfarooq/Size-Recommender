@@ -27,28 +27,28 @@ def man():
             Size= "Extra Small"
         else:
             Size= "Small"
-    elif (chestsize>32 and chestsize<36):
+    elif (chestsize>=32 and chestsize<36):
         if(shouldersize<45):
             Size= "Small"
         else:
             Size= "Medium"
-    elif (chestsize>36 and chestsize<40):
+    elif (chestsize>=36 and chestsize<40):
         if(shouldersize<55):
             Size= "Medium"
         else:
             Size= "Large"
-    elif (chestsize>40 and chestsize<44):
+    elif (chestsize>=40 and chestsize<44):
         if(shouldersize<60):
             Size= "Large"
         else:
             Size= "Extra Large"
         
-    elif (chestsize>44 and chestsize<48):
+    elif (chestsize>=44 and chestsize<48):
         if(shouldersize<65):
             Size= "Extra Large"
         else:
             Size= "2-Extra Large"
-    elif (chestsize>48):
+    elif (chestsize>=48):
         Size= "2-Extra Large"
     Size="Your Predicted T shirt Size: \n"+Size
 
